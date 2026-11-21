@@ -87,10 +87,11 @@ export default function Home() {
 
       <section className="hero container" id="top">
         <div className="hero-copy-block">
-          <p className="eyebrow"><span className="status-dot" /> SOFTWARE ENGINEER · BANGALORE, INDIA</p>
-          <h1>Thoughtful systems.<br /><span>Real-world scale.</span></h1>
+          <p className="eyebrow"><span className="status-dot" /> BANGALORE, INDIA</p>
+          <h1>Aniket Thakre<span>.</span></h1>
+          <p className="hero-role">Senior Software Engineer · Backend & Distributed Systems</p>
           <p className="hero-copy">
-            I’m <strong>Aniket Thakre</strong>, a senior software engineer with 5+ years of experience building dependable backend platforms across fintech and telecommunications.
+            5+ years building dependable platforms across fintech and telecommunications, from distributed lending services to telecom systems used at scale.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#work">Explore selected work <ArrowUpRight size={17} /></a>
@@ -158,8 +159,8 @@ export default function Home() {
       <section className="contact-section" id="contact">
         <div className="container contact-inner">
           <p className="eyebrow">04 / GET IN TOUCH</p>
-          <h2>Have a thoughtful<br />challenge? <span>I’m in.</span></h2>
-          <p className="contact-copy">I’m always glad to connect about backend systems, product engineering, and opportunities to build useful things.</p>
+          <h2>Let’s build something useful.</h2>
+          <p className="contact-copy">Get in touch about backend systems, product engineering, or opportunities to build reliable software.</p>
           <a className="button button-primary contact-button" href="mailto:aniket.thakre1997@gmail.com">aniket.thakre1997@gmail.com <ArrowUpRight size={17} /></a>
           <div className="social-links">
             <a href="https://linkedin.com/in/aniket-thakre7" target="_blank" rel="noreferrer"><BriefcaseBusiness size={16} /> LinkedIn <ArrowUpRight size={13} /></a>

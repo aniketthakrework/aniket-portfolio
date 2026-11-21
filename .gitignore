@@ -4,5 +4,4 @@ out
 build
 .idea/
 .env*
-!.env.example
 .DS_Store
