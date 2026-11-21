@@ -69,7 +69,23 @@ const experience = [
   },
 ];
 
+export const revalidate = 3600;
+
+function getExperienceYears() {
+  const dateParts = new Intl.DateTimeFormat("en-US", {
+    timeZone: "Asia/Kolkata",
+    year: "numeric",
+    month: "numeric",
+  }).formatToParts(new Date());
+  const year = Number(dateParts.find((part) => part.type === "year")?.value);
+  const month = Number(dateParts.find((part) => part.type === "month")?.value);
+
+  return year - 2021 - (month < 3 ? 1 : 0);
+}
+
 export default function Home() {
+  const experienceYears = getExperienceYears();
+
   return (
     <main>
       <nav className="nav container">
@@ -87,22 +103,22 @@ export default function Home() {
 
       <section className="hero container" id="top">
         <div className="hero-copy-block">
-          <p className="eyebrow"><span className="status-dot" /> BANGALORE, INDIA</p>
+          <p className="eyebrow"><MapPin className="location-icon" size={13} /> BANGALORE, INDIA</p>
           <h1>Aniket Thakre<span>.</span></h1>
           <p className="hero-role">Senior Software Engineer · Backend & Distributed Systems</p>
           <p className="hero-copy">
-            5+ years building dependable platforms across fintech and telecommunications, from distributed lending services to telecom systems used at scale.
+            {experienceYears}+ years building dependable platforms across fintech and telecommunications, from distributed lending services to telecom systems used at scale.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#work">Explore selected work <ArrowUpRight size={17} /></a>
             <a className="button button-secondary" href="mailto:aniket.thakre1997@gmail.com">Let’s talk <Mail size={16} /></a>
           </div>
-          <div className="hero-meta"><span>JAVA <i>·</i> DISTRIBUTED SYSTEMS <i>·</i> CLOUD</span><a href="#about">SCROLL TO EXPLORE <ArrowDown size={14} /></a></div>
+          <div className="hero-meta"><span>JAVA <i>·</i> ANGULAR <i>·</i> DISTRIBUTED SYSTEMS <i>·</i> CLOUD</span><a href="#about">SCROLL TO EXPLORE <ArrowDown size={14} /></a></div>
         </div>
         <div className="portrait-wrap">
           <Image className="portrait" src="/aniket-thakre.jpg" alt="Aniket Thakre" width={640} height={850} priority />
-          <div className="portrait-caption"><span>ANIKET THAKRE</span><span>ENGINEER / BUILDER</span></div>
-          <div className="portrait-stamp">5+<small>YEARS<br />BUILDING</small></div>
+          <div className="portrait-caption"><span>ANIKET THAKRE</span><span>ENGINEER / DEVELOPER</span></div>
+          <div className="portrait-stamp">{experienceYears}+<small>YEARS<br />BUILDING</small></div>
         </div>
       </section>
 
@@ -116,7 +132,7 @@ export default function Home() {
           </div>
         </div>
         <div className="container stats-row">
-          <div><strong>5<span>+</span></strong><small>YEARS IN SOFTWARE</small></div>
+          <div><strong>{experienceYears}<span>+</span></strong><small>YEARS IN SOFTWARE</small></div>
           <div><strong>25<span>+</span></strong><small>MICROSERVICES</small></div>
           <div><strong>10<span>k+</span></strong><small>CONNECTED SERVICES</small></div>
           <div><strong>2</strong><small>INDUSTRIES · FINTECH & TELECOM</small></div>
